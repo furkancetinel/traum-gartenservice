@@ -13,7 +13,7 @@ const checks = [
 
 export default function About() {
   const leftRef  = useRef<HTMLDivElement>(null)
-  const rightRef = useRef<HTMLDivElement>(null)
+  const rightRef = useRef<HTMLUListElement>(null)
   const photoRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
