@@ -1,0 +1,41 @@
+.section {
+  background: #1C3A2B;
+  padding: 100px 5vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.label {
+  font-size: 11px; font-weight: 600; letter-spacing: 3px;
+  text-transform: uppercase; color: #8FAF7E; margin-bottom: 14px;
+}
+.title {
+  font-size: clamp(26px, 3vw, 42px); font-weight: 700;
+  color: #fff; line-height: 1.1; letter-spacing: -1px; margin-bottom: 24px;
+}
+.text {
+  font-size: 15px; font-weight: 300;
+  color: rgba(255,255,255,0.68); line-height: 1.85;
+  margin-bottom: 18px;
+}
+.list {
+  list-style: none;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.listItem {
+  display: flex; align-items: flex-start; gap: 14px;
+  font-size: 15px; font-weight: 400;
+  color: rgba(255,255,255,0.82); line-height: 1.5;
+}
+.check {
+  flex-shrink: 0;
+  width: 24px; height: 24px;
+  border-radius: 50%; background: #8FAF7E;
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 1px;
+}
+
+@media (max-width: 900px) {
+  .section { grid-template-columns: 1fr; gap: 40px; padding: 72px 20px; }
+}
