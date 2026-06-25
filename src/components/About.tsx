@@ -13,7 +13,7 @@ const checks = [
 
 export default function About() {
   const leftRef  = useRef<HTMLDivElement>(null)
-  const rightRef = useRef<HTMLDivElement>(null)
+  const rightRef = useRef<HTMLUListElement>(null)
 
   useEffect(() => {
     const obs = new IntersectionObserver(
