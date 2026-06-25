@@ -2,17 +2,11 @@
 import { useRef, useEffect } from 'react'
 import styles from './Services.module.css'
 
-/*
-  FOTOĞRAF REHBERİ — HER HİZMET İÇİN:
-  Dosyaları public/images/services/ klasörüne koyun.
-  Önerilen boyut: 600x400px, .jpg
-  Arama önerileri her kartın altında belirtilmiştir.
-*/
 const services = [
   {
     photo: '/images/services/rasenmähen.jpg',
     photoAlt: 'Frisch gemähter Rasen',
-    photoHint: 'Arama: "lawn mowing professional garden"',
+    photoHint: '"lawn mowing professional garden freshly cut"',
     title: 'Rasenmähen',
     badge: null,
     desc: 'Regelmäßiges Mähen Ihrer Rasenflächen für ein gepflegtes Erscheinungsbild das ganze Jahr über.',
@@ -20,31 +14,31 @@ const services = [
   {
     photo: '/images/services/bewässern.jpg',
     photoAlt: 'Gartenbewässerung',
-    photoHint: 'Arama: "garden watering irrigation green lawn"',
+    photoHint: '"garden watering irrigation green lawn sprinkler"',
     title: 'Bewässern & Gießen',
     badge: null,
     desc: 'Fachgerechte Bewässerung Ihrer Grünflächen, Beete und Pflanzen — termingerecht und bedarfsgerecht.',
   },
   {
     photo: '/images/services/jäten.jpg',
-    photoAlt: 'Unkraut jäten im Garten',
-    photoHint: 'Arama: "weeding garden hands soil plants"',
+    photoAlt: 'Unkraut jäten',
+    photoHint: '"weeding garden hands soil plants"',
     title: 'Jäten',
     badge: null,
-    desc: 'Gründliches Entfernen von Unkraut und unerwünschten Wildpflanzen, damit Ihr Garten sauber bleibt.',
+    desc: 'Gründliches Entfernen von Unkraut, damit Ihr Garten sauber und gepflegt bleibt.',
   },
   {
     photo: '/images/services/mulchen.jpg',
     photoAlt: 'Mulch im Gartenbeet',
-    photoHint: 'Arama: "mulching garden beds bark chips"',
+    photoHint: '"mulching garden beds bark chips"',
     title: 'Mulchen',
     badge: null,
-    desc: 'Aufbringen von Mulchmaterial zum Schutz Ihrer Beete — hält Feuchtigkeit und hemmt Unkrautwachstum.',
+    desc: 'Mulchmaterial zum Schutz Ihrer Beete — hält Feuchtigkeit und hemmt Unkrautwachstum.',
   },
   {
     photo: '/images/services/laubrechen.jpg',
     photoAlt: 'Laubrechen im Herbst',
-    photoHint: 'Arama: "autumn leaves raking garden fall"',
+    photoHint: '"autumn leaves raking garden fall"',
     title: 'Laubrechen & Laub entfernen',
     badge: null,
     desc: 'Saisonales Sammeln und Entfernen von Laub — für saubere Flächen im Herbst.',
@@ -52,15 +46,15 @@ const services = [
   {
     photo: '/images/services/reinigung.jpg',
     photoAlt: 'Gehwegreinigung',
-    photoHint: 'Arama: "pavement cleaning outdoor courtyard pressure washing"',
+    photoHint: '"pavement cleaning outdoor courtyard"',
     title: 'Verkehrsflächenreinigung',
     badge: 'Freies Gewerbe',
     desc: 'Reinigung von Gehwegen, Innenhöfen und Parkplätzen — zuverlässig und regelmäßig.',
   },
   {
     photo: '/images/services/grabpflege.jpg',
-    photoAlt: 'Gepflegte Grabstätte mit Blumen',
-    photoHint: 'Arama: "grave care flowers cemetery maintenance"',
+    photoAlt: 'Grabpflege mit Blumen',
+    photoHint: '"grave care flowers cemetery maintenance"',
     title: 'Grabpflege',
     badge: 'Freies Gewerbe',
     desc: 'Würdevolle Pflege von Grabstätten — Bepflanzung, Reinigung und saisonale Gestaltung.',
@@ -68,10 +62,10 @@ const services = [
   {
     photo: '/images/services/rollrasen.jpg',
     photoAlt: 'Rollrasen verlegen',
-    photoHint: 'Arama: "laying turf roll lawn installation"',
+    photoHint: '"laying turf roll lawn installation"',
     title: 'Rollrasen verlegen',
     badge: null,
-    desc: 'Professionelles Verlegen von Fertigrasen inkl. Bodenvorbereitigung — für sofort nutzbare Flächen.',
+    desc: 'Professionelles Verlegen von Fertigrasen inkl. Bodenvorbereitigung — sofort nutzbar.',
   },
 ]
 
@@ -81,28 +75,23 @@ function ServiceCard({ svc, index }: { svc: typeof services[0]; index: number })
     const el = ref.current; if (!el) return
     const obs = new IntersectionObserver(
       ([e]) => { if (e.isIntersecting) { el.classList.add('visible'); obs.unobserve(el) } },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
     )
     obs.observe(el)
     return () => obs.disconnect()
   }, [])
 
   return (
-    <div ref={ref} className={`${styles.card} reveal`} style={{ transitionDelay: `${(index % 4) * 0.08}s` }}>
-      {/*
-        FOTOĞRAF ALANI — {svc.title}
-        {svc.photoHint}
-      */}
+    <div ref={ref} className={`${styles.card} reveal`} style={{ transitionDelay: `${(index % 4) * 0.09}s` }}>
       <div className={styles.photoWrap}>
+        {/* FOTOĞRAF: public/images/services/ klasörüne ekleyin — {svc.photoHint} */}
         <div
           className={styles.photo}
-          style={{
-            backgroundImage: `url('${svc.photo}')`,
-            /* Fotoğraf yokken yeşil arka plan gösterilir */
-          }}
+          style={{ backgroundImage: `url('${svc.photo}')` }}
           role="img"
           aria-label={svc.photoAlt}
         />
+        <div className={styles.photoOverlay} aria-hidden="true" />
         {svc.badge && <span className={styles.badge}>{svc.badge}</span>}
       </div>
       <div className={styles.cardBody}>
@@ -127,7 +116,7 @@ export default function Services() {
       <div ref={headRef} className={`${styles.head} reveal`}>
         <p className={styles.label}>Unsere Leistungen</p>
         <h2 className={styles.title}>Was wir für Sie tun</h2>
-        <p className={styles.sub}>Alle Leistungen fachgerecht und im gesetzlich zulässigen Rahmen.</p>
+        <p className={styles.sub}>Alle Leistungen fachgerecht und im gesetzlich zulässigen Rahmen erbracht.</p>
       </div>
       <div className={styles.grid}>
         {services.map((svc, i) => <ServiceCard key={i} svc={svc} index={i} />)}

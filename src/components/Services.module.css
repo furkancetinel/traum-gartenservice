@@ -1,72 +1,58 @@
-.section {
-  background: #fff;
-  padding: 100px 5vw;
-}
+.section { background: #fff; padding: 100px 5vw; }
 .head { margin-bottom: 56px; }
-.label {
-  font-size: 11px; font-weight: 600; letter-spacing: 3px;
-  text-transform: uppercase; color: #2E5C42; margin-bottom: 12px;
-}
-.title {
-  font-size: clamp(28px, 3.5vw, 46px); font-weight: 700;
-  color: #141414; line-height: 1.1; letter-spacing: -1px; margin-bottom: 14px;
-}
+.label { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #2E5C42; margin-bottom: 12px; }
+.title { font-size: clamp(28px, 3.5vw, 46px); font-weight: 700; color: #141414; line-height: 1.1; letter-spacing: -1px; margin-bottom: 14px; }
 .sub { font-size: 15px; font-weight: 300; color: #5A6355; max-width: 480px; line-height: 1.7; }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: #e8e8e4;
-  border: 1px solid #e8e8e4;
-  overflow: hidden;
+  gap: 20px;
 }
 
 .card {
   background: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 4px;
   overflow: hidden;
-  transition: transform 0.25s;
-  cursor: default;
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s, border-color 0.3s;
 }
-.card:hover { z-index: 1; transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0,0,0,0.1);
+  border-color: #8FAF7E;
+}
 
-/* Fotoğraf alanı */
 .photoWrap {
-  position: relative;
-  aspect-ratio: 4/3;
-  overflow: hidden;
+  position: relative; aspect-ratio: 4/3; overflow: hidden;
 }
 .photo {
   width: 100%; height: 100%;
-  background-color: #2E5C42;  /* fotoğraf yokken yeşil */
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.4s ease;
+  background-color: #2E5C42;
+  background-size: cover; background-position: center;
+  transition: transform 0.5s cubic-bezier(0.22,1,0.36,1);
 }
-.card:hover .photo { transform: scale(1.04); }
+.card:hover .photo { transform: scale(1.06); }
+
+.photoOverlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.18) 100%);
+  transition: opacity 0.3s;
+}
+.card:hover .photoOverlay { opacity: 0; }
 
 .badge {
   position: absolute; top: 12px; left: 12px;
-  font-size: 10px; font-weight: 600;
+  font-size: 10px; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.8px;
   color: #1C3A2B; background: #8FAF7E;
   padding: 4px 10px; border-radius: 2px;
 }
 
-.cardBody { padding: 20px 22px 24px; }
-.cardTitle {
-  font-size: 15px; font-weight: 700;
-  color: #141414; margin-bottom: 8px; line-height: 1.3;
-}
-.cardDesc { font-size: 13px; font-weight: 300; color: #5A6355; line-height: 1.65; }
+.cardBody { padding: 20px 20px 24px; }
+.cardTitle { font-size: 15px; font-weight: 700; color: #141414; margin-bottom: 8px; line-height: 1.3; }
+.cardDesc { font-size: 14px; font-weight: 300; color: #5A6355; line-height: 1.65; }
 
-@media (max-width: 1100px) {
-  .grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 768px) {
-  .section { padding: 72px 20px; }
-  .grid { grid-template-columns: repeat(2, 1fr); gap: 1px; }
-}
-@media (max-width: 480px) {
-  .grid { grid-template-columns: 1fr; }
-}
+@media (max-width: 1100px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px) { .section { padding: 72px 20px; } .grid { grid-template-columns: repeat(2, 1fr); gap: 14px; } }
+@media (max-width: 480px) { .grid { grid-template-columns: 1fr; } }

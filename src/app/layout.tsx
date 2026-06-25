@@ -2,19 +2,16 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'TraumGartenservice Wien — Professionelle Gartenpflege',
-  description: 'Gartenpflege, Rasenmähen, Bewässerung, Grabpflege und Grünflächenreinigung in Wien. Faire Preise, schnelle Terminvergabe, rechtlich zugelassen.',
-  keywords: 'Gartenpflege Wien, Rasenmähen Wien, Grabpflege Wien, Grünflächenreinigung, Gartenservice Wien',
+  title: 'TraumGartenservice — Professionelle Gartenpflege Wiener Neustadt',
+  description: 'Gartenpflege, Rasenmähen, Bewässerung, Grabpflege und Reinigung in Wiener Neustadt. Faire Preise, schnelle Terminvergabe. Jetzt Angebot anfragen: +43 676 5476510',
+  keywords: 'Gartenpflege Wiener Neustadt, Rasenmähen, Grabpflege, Grünflächenreinigung, Gartenservice Wien',
   openGraph: {
-    title: 'TraumGartenservice — Gartenpflege in Wien',
-    description: 'Professionelle Gartenpflege in Wien. Rasenmähen, Bewässerung, Grabpflege & mehr.',
+    title: 'TraumGartenservice — Wiener Neustadt',
+    description: 'Professionelle Gartenpflege in Wiener Neustadt und Umgebung.',
     locale: 'de_AT',
     type: 'website',
   },
-  icons: {
-    icon: '/icon.svg',
-    apple: '/icon.svg',
-  }
+  icons: { icon: '/icon.svg', apple: '/icon.svg' }
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
