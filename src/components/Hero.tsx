@@ -35,7 +35,6 @@ export default function Hero() {
         {/* Sol — metin */}
         <div ref={textRef} className={styles.textCol}>
           <p className={styles.eyebrow}>
-            <span className={styles.dot} aria-hidden="true" />
             Professionelle Gartenpflege · Wiener Neustadt
           </p>
           <h1 className={styles.title}>

@@ -15,8 +15,21 @@
 .tab:hover:not(.tabActive) { border-color: rgba(255,255,255,0.3); color: #fff; }
 .tabActive { background: #8FAF7E; color: #1C3A2B; border-color: #8FAF7E; font-weight: 700; }
 
+/* Slider wrapper with nav buttons */
+.sliderOuter { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+
+.navBtn {
+  flex-shrink: 0; width: 44px; height: 44px;
+  border-radius: 50%; border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08); color: #fff; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+.navBtn:hover { background: #8FAF7E; border-color: #8FAF7E; color: #1C3A2B; transform: scale(1.08); }
+
 /* Slider */
 .sliderWrap {
+  flex: 1;
   position: relative; border-radius: 4px; overflow: hidden;
   height: clamp(260px, 40vw, 500px);
   user-select: none; cursor: col-resize;

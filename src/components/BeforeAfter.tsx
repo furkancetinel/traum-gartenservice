@@ -74,27 +74,37 @@ export default function BeforeAfter() {
         </div>
       </div>
 
-      <div
-        ref={sliderRef}
-        className={styles.sliderWrap}
-        onMouseDown={onMouseDown}
-        onTouchStart={onTouchStart}
-        role="img"
-        aria-label={`Vorher/Nachher: ${cur.label}`}
-      >
-        <div className={styles.imgAfter} style={{ backgroundImage: `url(${cur.after})`, backgroundColor: cur.afterBg }} />
-        <div className={styles.imgBefore} style={{ backgroundImage: `url(${cur.before})`, backgroundColor: cur.beforeBg, clipPath: `inset(0 ${100 - pos}% 0 0)` }} />
+      <div className={styles.sliderOuter}>
+        <button className={styles.navBtn} onClick={() => { setActiveIdx(i => (i - 1 + slides.length) % slides.length); setPos(50) }} aria-label="Vorheriges">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
 
-        <span className={styles.labelVorher} aria-hidden="true">Vorher</span>
-        <span className={styles.labelNachher} aria-hidden="true">Nachher</span>
+        <div
+          ref={sliderRef}
+          className={styles.sliderWrap}
+          onMouseDown={onMouseDown}
+          onTouchStart={onTouchStart}
+          role="img"
+          aria-label={`Vorher/Nachher: ${cur.label}`}
+        >
+          <div className={styles.imgAfter} style={{ backgroundImage: `url(${cur.after})`, backgroundColor: cur.afterBg }} />
+          <div className={styles.imgBefore} style={{ backgroundImage: `url(${cur.before})`, backgroundColor: cur.beforeBg, clipPath: `inset(0 ${100 - pos}% 0 0)` }} />
 
-        <div className={styles.handle} style={{ left: `${pos}%` }}>
-          <div className={styles.line} />
-          <div className={styles.btn}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C3A2B" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/><polyline points="9 18 3 12 9 6"/></svg>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C3A2B" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/><polyline points="15 18 21 12 15 6"/></svg>
+          <span className={styles.labelVorher} aria-hidden="true">Vorher</span>
+          <span className={styles.labelNachher} aria-hidden="true">Nachher</span>
+
+          <div className={styles.handle} style={{ left: `${pos}%` }}>
+            <div className={styles.line} />
+            <div className={styles.btn}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C3A2B" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"/><polyline points="9 18 3 12 9 6"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1C3A2B" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/><polyline points="15 18 21 12 15 6"/></svg>
+            </div>
           </div>
         </div>
+
+        <button className={styles.navBtn} onClick={() => { setActiveIdx(i => (i + 1) % slides.length); setPos(50) }} aria-label="Nächstes">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
       </div>
 
       <div className={styles.thumbs}>

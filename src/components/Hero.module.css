@@ -42,12 +42,10 @@
   margin-bottom: 24px;
   opacity: 0; animation: fadeUp 0.7s 0.05s forwards paused;
 }
-.dot {
-  width: 8px; height: 8px; border-radius: 50%;
+.eyebrow::before {
+  content: ''; display: block; width: 24px; height: 1.5px;
   background: #8FAF7E; flex-shrink: 0;
-  animation: pulse 2.5s ease-in-out infinite;
 }
-@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.5)} }
 
 .title {
   font-size: clamp(38px, 5vw, 74px); font-weight: 800;
