@@ -26,7 +26,7 @@ export default function Hero() {
       */}
       <div
         className={styles.bg}
-        style={{ background: '#1C3A2B' }}
+        style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
         role="img" aria-label="Gepflegter Garten"
       />
       <div className={styles.overlay} aria-hidden="true" />
