@@ -43,15 +43,6 @@ export default function Hero() {
             Rasenmähen, Bewässerung, Grabpflege und Reinigung —
             termingerecht und zu fairen Preisen.
           </p>
-
-          <div className={styles.actions}>
-            <button onClick={() => scrollTo('#kontakt')} className={styles.btn}>
-              Kostenloses Angebot anfragen
-            </button>
-            <button onClick={() => scrollTo('#leistungen')} className={styles.btnOutline}>
-              Leistungen ansehen
-            </button>
-          </div>
         </div>
 
         {/* Sağ — bahçıvan PNG */}

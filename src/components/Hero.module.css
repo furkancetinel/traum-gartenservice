@@ -88,15 +88,15 @@
 .photoCol.in { opacity: 1; }
 
 .gardenerImg {
-  width: 100%; max-width: 520px; height: auto;
+  width: 100%; max-width: 680px; height: auto;
   object-fit: contain; object-position: bottom;
   display: block;
-  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.12));
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
 }
 
 /* Kayan yazı bandı */
 .ticker {
-  background: #1C3A2B;
+  background: #8FAF7E;
   padding: 14px 0;
   overflow: hidden;
   white-space: nowrap;
@@ -107,13 +107,13 @@
   animation: ticker 28s linear infinite;
 }
 .tickerItem {
-  font-size: 13px; font-weight: 500;
-  color: rgba(255,255,255,0.85);
+  font-size: 13px; font-weight: 600;
+  color: #1C3A2B;
   letter-spacing: 0.5px;
   padding: 0 20px;
   display: inline-flex; align-items: center; gap: 20px;
 }
-.tickerDot { color: #8FAF7E; font-size: 16px; }
+.tickerDot { color: #1C3A2B; opacity: 0.5; font-size: 16px; }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
