@@ -1,37 +1,50 @@
 .footer { font-family: 'Poppins', sans-serif; background: #1C3A2B; }
 
-/* Ana grid */
 .main {
-  padding: 64px 5vw 48px;
-  display: grid; grid-template-columns: 1.8fr 1fr 1fr; gap: 56px;
+  padding: 56px 5vw 40px;
+  display: flex; flex-direction: column; gap: 40px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.logoLink { display: block; margin-bottom: 20px; }
-.tagline { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.65); line-height: 1.75; max-width: 280px; margin-bottom: 28px; }
+/* Logo + tagline */
+.brand { display: flex; flex-direction: column; gap: 14px; }
+.logoLink { display: block; }
+.tagline { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.6); line-height: 1.7; max-width: 340px; }
 
-.contactList { display: flex; flex-direction: column; gap: 13px; }
-.contactRow { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.5; }
-.contactRow a { color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
+/* Tek kolonda linkler yan yana wrap */
+.links {
+  display: flex; flex-wrap: wrap; gap: 10px 0;
+  flex-direction: column;
+}
+.linksRow {
+  display: flex; flex-wrap: wrap; gap: 8px 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.linksRow:last-child { border-bottom: none; padding-bottom: 0; }
+.linksHead { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 10px; }
+.linksRow a { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+.linksRow a:hover { color: #8FAF7E; }
+
+/* Kontakt satırları */
+.contactRows { display: flex; flex-direction: column; gap: 10px; }
+.contactRow { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.7); line-height: 1.5; }
+.contactRow a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
 .contactRow a:hover { color: #8FAF7E; }
-
-.col h4 { font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 18px; }
-.col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.col ul a { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.75); text-decoration: none; transition: color 0.2s; }
-.col ul a:hover { color: #8FAF7E; }
 
 /* Alt bar */
 .bottom {
-  padding: 20px 5vw;
+  padding: 18px 5vw;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  flex-wrap: wrap;
 }
-.bottom p { font-size: 13px; color: rgba(255,255,255,0.35); margin: 0; }
-.legal { display: flex; gap: 20px; }
-.legal a { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s; }
+.bottom p { font-size: 13px; color: rgba(255,255,255,0.3); margin: 0; }
+.legal { display: flex; gap: 18px; flex-wrap: wrap; }
+.legal a { font-size: 13px; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
 .legal a:hover { color: rgba(255,255,255,0.7); }
 
-@media (max-width: 900px) { .main { grid-template-columns: 1fr 1fr; } }
+/* Mobil: zaten tek kolon, sadece padding */
 @media (max-width: 560px) {
-  .main { grid-template-columns: 1fr; gap: 32px; padding: 40px 20px; }
-  .bottom { flex-direction: column; text-align: center; }
+  .main { padding: 40px 20px 32px; }
+  .bottom { flex-direction: column; align-items: flex-start; gap: 8px; padding: 16px 20px; }
 }
