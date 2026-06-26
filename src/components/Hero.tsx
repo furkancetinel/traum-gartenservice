@@ -80,11 +80,10 @@ export default function Hero() {
             veya gerçek çalışan fotoğrafı
           */}
           <div className={styles.gardenerWrap}>
-            <div
+            <img
+              src="/images/gardener.png"
+              alt="Gartenexperte von TraumGartenservice"
               className={styles.gardenerPhoto}
-              style={{ backgroundImage: `url('/images/gardener.jpg')` }}
-              role="img"
-              aria-label="Gartenexperte von TraumGartenservice"
             />
             {/* Floating kart */}
             <div className={styles.floatCard}>

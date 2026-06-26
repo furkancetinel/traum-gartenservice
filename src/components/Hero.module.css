@@ -108,14 +108,14 @@
 
 .gardenerWrap {
   position: relative;
-  width: 340px;
+  width: 380px;
 }
 .gardenerPhoto {
-  width: 340px; height: 460px;
-  background-color: #2E5C42;
-  background-size: cover; background-position: center top;
-  border-radius: 4px;
-  box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+  width: 100%; height: auto;
+  max-height: 480px; object-fit: contain; object-position: bottom;
+  filter: drop-shadow(0 24px 48px rgba(0,0,0,0.5));
+  mix-blend-mode: multiply;
+  display: block;
 }
 .floatCard {
   position: absolute; bottom: -20px; left: -32px;
