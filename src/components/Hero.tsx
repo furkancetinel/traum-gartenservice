@@ -14,10 +14,13 @@ const ticker = [
 export default function Hero() {
   const scrollTo = (id: string) => document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
   const textRef = useRef<HTMLDivElement>(null)
+  const photoRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const el = textRef.current; if (!el) return
-    requestAnimationFrame(() => el.classList.add('in'))
+    requestAnimationFrame(() => {
+      textRef.current?.classList.add('in')
+      photoRef.current?.classList.add('in')
+    })
   }, [])
 
   const items = [...ticker, ...ticker]
@@ -51,7 +54,7 @@ export default function Hero() {
         </div>
 
         {/* Sağ — bahçıvan PNG */}
-        <div className={styles.photoCol}>
+        <div ref={photoRef} className={styles.photoCol}>
           <img
             src="/images/gardener.png"
             alt="Gartenexperte von TraumGartenservice"
