@@ -1,9 +1,13 @@
 import styles from '../legal.module.css'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export const metadata = { title: 'Impressum — TraumGartenservice' }
 
 export default function Impressum() {
   return (
+    <>
+      <Header />
     <div className={styles.wrap}>
       <div className={styles.inner}>
         <a href="/" className={styles.back}>← Zurück zur Startseite</a>
@@ -67,6 +71,7 @@ export default function Impressum() {
           </p>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   )
 }

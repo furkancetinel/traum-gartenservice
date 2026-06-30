@@ -1,9 +1,13 @@
 import styles from '../legal.module.css'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export const metadata = { title: 'Datenschutzerklärung — TraumGartenservice' }
 
 export default function Datenschutz() {
   return (
+    <>
+      <Header />
     <div className={styles.wrap}>
       <div className={styles.inner}>
         <a href="/" className={styles.back}>← Zurück zur Startseite</a>
@@ -85,5 +89,7 @@ export default function Datenschutz() {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   )
 }

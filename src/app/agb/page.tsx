@@ -1,9 +1,13 @@
 import styles from '../legal.module.css'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export const metadata = { title: 'AGB — TraumGartenservice' }
 
 export default function AGB() {
   return (
+    <>
+      <Header />
     <div className={styles.wrap}>
       <div className={styles.inner}>
         <a href="/" className={styles.back}>← Zurück zur Startseite</a>
@@ -80,5 +84,7 @@ export default function AGB() {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   )
 }
