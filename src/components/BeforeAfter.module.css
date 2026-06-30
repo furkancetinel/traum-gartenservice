@@ -77,7 +77,7 @@
 
 @media (max-width: 768px) {
   .section { padding: 72px 20px; }
-  .head { flex-direction: column; align-items: center; text-align: center; }
+  .head { flex-direction: column; align-items: flex-start; }
   .sliderWrap { height: 320px; }
   .navBtn { display: none; }
   .sliderOuter { gap: 0; }
