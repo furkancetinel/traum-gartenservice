@@ -37,32 +37,34 @@ export default function Header({ solid = false }: { solid?: boolean }) {
   return (
     <>
       <header className={`${styles.header} ${(scrolled || solid) ? styles.scrolled : ''}`}>
-        {/* Sol: logo + nav */}
-        <div className={styles.left}>
-          <a href="/" className={styles.logo} aria-label="TraumGartenservice">
-            <Image src="/logo.svg" alt="TraumGartenservice" width={180} height={34} priority className={styles.logoImg} />
-          </a>
-          <nav className={styles.nav}>
-            {navLinks.map(link => (
-              <button key={link.href} onClick={() => handleNav(link.href)}
-                className={`${styles.navLink} ${active === link.href.slice(1) ? styles.navActive : ''}`}>
-                {link.label}
-              </button>
-            ))}
-          </nav>
-        </div>
+        {/* Sol: logo */}
+        <a href="/" className={styles.logo} aria-label="TraumGartenservice">
+          <Image src="/logo.svg" alt="TraumGartenservice" width={180} height={34} priority className={styles.logoImg} />
+        </a>
+
+        {/* Orta: nav */}
+        <nav className={styles.nav}>
+          {navLinks.map(link => (
+            <button key={link.href} onClick={() => handleNav(link.href)}
+              className={`${styles.navLink} ${active === link.href.slice(1) ? styles.navActive : ''}`}>
+              {link.label}
+            </button>
+          ))}
+        </nav>
 
         {/* Sağ: CTA + burger */}
-        <button onClick={() => handleNav('#kontakt')} className={styles.cta}>
-          Angebot anfragen
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </button>
-        <button className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)} aria-label="Menü">
-          <span /><span /><span />
-        </button>
+        <div className={styles.right}>
+          <button onClick={() => handleNav('#kontakt')} className={styles.cta}>
+            Angebot anfragen
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </button>
+          <button className={`${styles.burger} ${menuOpen ? styles.burgerOpen : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)} aria-label="Menü">
+            <span /><span /><span />
+          </button>
+        </div>
       </header>
 
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ''}`}>
