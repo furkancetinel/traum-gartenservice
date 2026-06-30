@@ -7,7 +7,7 @@ export const metadata = { title: 'Datenschutzerklärung — TraumGartenservice' 
 export default function Datenschutz() {
   return (
     <>
-      <Header />
+      <Header solid />
     <div className={styles.wrap}>
       <div className={styles.inner}>
         <a href="/" className={styles.back}>← Zurück zur Startseite</a>

@@ -10,7 +10,7 @@ const navLinks = [
   { href: '#kontakt', label: 'Kontakt' },
 ]
 
-export default function Header() {
+export default function Header({ solid = false }: { solid?: boolean }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [active, setActive] = useState('')
@@ -36,7 +36,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+      <header className={`${styles.header} ${(scrolled || solid) ? styles.scrolled : ''}`}>
         {/* Sol: logo + nav */}
         <div className={styles.left}>
           <a href="/" className={styles.logo} aria-label="TraumGartenservice">

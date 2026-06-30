@@ -7,7 +7,7 @@ export const metadata = { title: 'AGB — TraumGartenservice' }
 export default function AGB() {
   return (
     <>
-      <Header />
+      <Header solid />
     <div className={styles.wrap}>
       <div className={styles.inner}>
         <a href="/" className={styles.back}>← Zurück zur Startseite</a>
