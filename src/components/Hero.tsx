@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useRef } from 'react'
+import Image from 'next/image'
 import styles from './Hero.module.css'
 
 const ticker = [
@@ -47,9 +48,12 @@ export default function Hero() {
 
         {/* Sağ — bahçıvan PNG */}
         <div ref={photoRef} className={styles.photoCol}>
-          <img
+          <Image
             src="/images/gardener.png"
             alt="Gartenexperte von TraumGartenservice"
+            width={680}
+            height={900}
+            priority
             className={styles.gardenerImg}
           />
         </div>
