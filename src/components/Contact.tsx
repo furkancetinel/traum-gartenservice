@@ -116,12 +116,12 @@ export default function Contact() {
         ) : (
           <form onSubmit={handleSubmit} className={styles.form} noValidate>
             <div className={styles.row}>
-              <div className={styles.fg}><label htmlFor="vorname">Vorname *</label><input id="vorname" type="text" placeholder="Max" value={form.vorname} onChange={set('vorname')} required autoComplete="given-name"/></div>
-              <div className={styles.fg}><label htmlFor="nachname">Nachname</label><input id="nachname" type="text" placeholder="Mustermann" value={form.nachname} onChange={set('nachname')} autoComplete="family-name"/></div>
+              <div className={styles.fg}><label htmlFor="vorname">Vorname *</label><input id="vorname" type="text" value={form.vorname} onChange={set('vorname')} required autoComplete="given-name"/></div>
+              <div className={styles.fg}><label htmlFor="nachname">Nachname</label><input id="nachname" type="text" value={form.nachname} onChange={set('nachname')} autoComplete="family-name"/></div>
             </div>
             <div className={styles.row}>
-              <div className={styles.fg}><label htmlFor="email">E-Mail *</label><input id="email" type="email" placeholder="max@beispiel.at" value={form.email} onChange={set('email')} required autoComplete="email"/></div>
-              <div className={styles.fg}><label htmlFor="telefon">Telefon</label><input id="telefon" type="tel" placeholder="+43 676 …" value={form.telefon} onChange={set('telefon')} autoComplete="tel"/></div>
+              <div className={styles.fg}><label htmlFor="email">E-Mail *</label><input id="email" type="email" value={form.email} onChange={set('email')} required autoComplete="email"/></div>
+              <div className={styles.fg}><label htmlFor="telefon">Telefon</label><input id="telefon" type="tel" value={form.telefon} onChange={set('telefon')} autoComplete="tel"/></div>
             </div>
             <div className={styles.fg}><label htmlFor="leistung">Gewünschte Leistung</label>
               <select id="leistung" value={form.leistung} onChange={set('leistung')}>
